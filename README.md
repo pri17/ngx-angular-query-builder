@@ -4,11 +4,14 @@ The goal of this project is to enable Angular 12+ support for the original [angu
 
 ## I suggest forking this project if it is critical to your project because I may not update this regularly. If you want to contribute to maintaining this project open an issue.
 
+The changelog for the package is here: https://github.com/raysuelzer/ngx-angular-query-builder/blob/main/projects/ngx-angular-query-builder/CHANGELOG.md
+
 This project uses code from https://github.com/designermanjeets/Angular-QueryBuilder a fork of https://github.com/zebzhao/Angular-QueryBuilder both developed under the MIT License.
 
 ## Change Log
 
 https://github.com/raysuelzer/ngx-angular-query-builder/blob/main/projects/ngx-angular-query-builder/CHANGELOG.md
+
 
 ## Branches
 
@@ -26,6 +29,7 @@ Use the following versions depending upon your angular version
 - Angular 15 - Versions 15.x.x
 - Angular 16 - Versions 16.x.x
 - Angular 17 - Versions 17.x.x
+- Angular 18 - Versions 18.x.x
 
 # Examples
 
