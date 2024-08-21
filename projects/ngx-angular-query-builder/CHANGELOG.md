@@ -48,3 +48,8 @@
  - Scripts update, individual commands for demo and lib project
  - Addition of prettier script, and prettier changes including .prettierrc and .prettierignore files
  - Fixed the HostBinding method for query condition (fixes typo)
+
+
+### 18.0.0
+
+- Support angular 18 Thank you to mperezd
