@@ -12,6 +12,7 @@ export interface Rule {
   value?: any;
   operator?: string;
   entity?: string;
+  timeFame?: number;
 }
 
 export interface Option {
@@ -34,6 +35,7 @@ export interface Field {
   defaultOperator?: any;
   entity?: string;
   validator?: (rule: Rule, parent: RuleSet) => any | null;
+  timeRange?: Option[];
 }
 
 export interface LocalRuleMeta {
@@ -84,6 +86,7 @@ export interface QueryBuilderClassNames {
   operatorControlSize?: string;
   inputControl?: string;
   inputControlSize?: string;
+  flexRow?: string;
 }
 
 export interface QueryBuilderConfig {
@@ -93,6 +96,7 @@ export interface QueryBuilderConfig {
   getOperators?: (fieldName: string, field: Field) => string[];
   getInputType?: (field: string, operator: string) => string;
   getOptions?: (field: string) => Option[];
+  getTimeRange?: (field: string) => Option[];
   addRuleSet?: (parent: RuleSet) => void;
   addRule?: (parent: RuleSet) => void;
   removeRuleSet?: (ruleset: RuleSet, parent?: RuleSet) => void;

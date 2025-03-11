@@ -102,7 +102,8 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
     operatorControl: "q-operator-control",
     operatorControlSize: "q-control-size",
     inputControl: "q-input-control",
-    inputControlSize: "q-control-size"
+    inputControlSize: "q-control-size",
+    flexRow: "d-flex flex-row"
   };
   public defaultOperatorMap: { [key: string]: string[] } = {
     string: ["=", "!=", "contains", "like"],
@@ -180,6 +181,13 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
   private entityContextCache = new Map<Rule, EntityContext>();
   private removeButtonContextCache = new Map<Rule, RemoveButtonContext>();
   private buttonGroupContext!: ButtonGroupContext;
+
+  private timeRanges: Option[] = [
+    { name: "last 7 days", value: 7 },
+    { name: "last 30 days", value: 30 },
+    { name: "last 6 months", value: 180 },
+    { name: "last year", value: 365 }
+  ];
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
     this.fields = [];
@@ -363,6 +371,13 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
       return this.config.getOptions(field);
     }
     return this.config.fields[field].options || this.defaultEmptyList;
+  }
+
+  getTimeRange(field: string): Option[] {
+    if (this.config.getTimeRange) {
+      return this.config.getTimeRange(field);
+    }
+    return this.timeRanges || this.defaultEmptyList;
   }
 
   getClassNames(...args: string[]): any | string[] {

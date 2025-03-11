@@ -39,13 +39,18 @@ export class AppComponent {
     entityControl: "form-control",
     entityControlSize: "col-auto pr-0",
     inputControl: "form-control",
-    inputControlSize: "col-auto"
+    inputControlSize: "col-auto",
+    flexRow: "d-flex flex-row"
   };
 
   public query = {
     condition: "and",
     rules: [
-      { field: "age", operator: "<=", entity: "physical" },
+      {
+        field: "age",
+        operator: "<=",
+        entity: "physical"
+      },
       {
         field: "birthday",
         operator: "=",
@@ -70,7 +75,11 @@ export class AppComponent {
       nonphysical: { name: "Nonphysical Attributes" }
     },
     fields: {
-      age: { name: "Age", type: "number", entity: "physical" },
+      age: {
+        name: "Age",
+        type: "number",
+        entity: "physical"
+      },
       gender: {
         name: "Gender",
         entity: "physical",
@@ -121,7 +130,10 @@ export class AppComponent {
 
   public config: QueryBuilderConfig = {
     fields: {
-      age: { name: "Age", type: "number" },
+      age: {
+        name: "Age",
+        type: "number"
+      },
       gender: {
         name: "Gender",
         type: "category",

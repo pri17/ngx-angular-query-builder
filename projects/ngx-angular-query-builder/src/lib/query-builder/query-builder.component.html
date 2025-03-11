@@ -196,7 +196,7 @@
 
             <ng-template #defaultInput>
               <div
-                [ngClass]="getClassNames('inputControlSize')"
+                [ngClass]="getClassNames('inputControlSize', 'flexRow')"
                 [ngSwitch]="getInputType(rule.field, rule.operator)"
               >
                 <input
@@ -263,6 +263,17 @@
                   *ngSwitchCase="'boolean'"
                   type="checkbox"
                 />
+                <span style="padding:5px 10px" *ngSwitchCase="'number'">in</span>
+                <select
+                  [ngClass]="getClassNames('inputControl')"
+                  [(ngModel)]="rule.timeFame"
+                  (ngModelChange)="changeInput()"
+                  *ngSwitchCase="'number'"
+                >
+                  <option *ngFor="let opt of getTimeRange(rule.field)" [ngValue]="opt.value">
+                    {{ opt.name }}
+                  </option>
+                </select>
               </div>
             </ng-template>
           </ng-container>
