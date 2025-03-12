@@ -1,6 +1,4 @@
 {
-  "name": "@pri17/ngx-angular-query-builder",
-  "version": "18.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -43,17 +41,5 @@
     "karma-spec-reporter": "^0.0.36",
     "ng-packagr": "18.0.0",
     "typescript": "5.4.5"
-  },
-  "description": "The project is forked from https://github.com/raysuelzer/ngx-angular-query-builder. Added new field for use.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pri17/ngx-angular-query-builder.git"
-  },
-  "author": "gwen zhou",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pri17/ngx-angular-query-builder/issues"
-  },
-  "homepage": "https://github.com/pri17/ngx-angular-query-builder#readme"
+  }
 }

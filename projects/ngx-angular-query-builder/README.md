@@ -1,5 +1,27 @@
 # NgxAngularQueryBuilder
 
+# NgxAngularQueryBuilder
+
+
+This project is forked from https://github.com/raysuelzer/ngx-angular-query-builder.
+
+Added new fields for use.
+
+### timeFame
+
+If a rule is a number type, then user will need to choose an time frame from 
+
+	"last 7 days" 
+	"last 30 days"
+	"last 6 months"
+	"last year"
+
+
+
+## To install
+npm i @pri17/ngx-angular-query-builder
+
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
 ## Code scaffolding

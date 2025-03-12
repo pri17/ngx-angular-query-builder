@@ -1,7 +1,6 @@
 {
-  "name": "ngx-angular-query-builder",
-  "version": "18.0.0",
-  "description": "Port of angular2-query-builder from github.com/designermanjeets/Angular-QueryBuilder in order to support angular 12+",
+  "name": "@pri17/ngx-angular-query-builder",
+  "version": "18.0.5",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^18.0.3",
@@ -9,5 +8,16 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "description": "The project is forked from https://github.com/raysuelzer/ngx-angular-query-builder. Added new field for use.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pri17/ngx-angular-query-builder.git"
+  },
+  "author": "gwen zhou",
+  "bugs": {
+    "url": "https://github.com/pri17/ngx-angular-query-builder/issues"
+  },
+  "homepage": "https://github.com/pri17/ngx-angular-query-builder#readme"
 }
