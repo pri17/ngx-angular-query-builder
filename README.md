@@ -1,39 +1,25 @@
 # NgxAngularQueryBuilder
 
-The goal of this project is to enable Angular 12+ support for the original [angular2-query-builder](https://github.com/zebzhao/Angular-QueryBuilder). It is _not_ production ready. This project may not be maintained. Should the original project become active again, this library may be abandoned.
 
-## I suggest forking this project if it is critical to your project because I may not update this regularly. If you want to contribute to maintaining this project open an issue.
+This project is forked from https://github.com/raysuelzer/ngx-angular-query-builder.
 
-The changelog for the package is here: https://github.com/raysuelzer/ngx-angular-query-builder/blob/main/projects/ngx-angular-query-builder/CHANGELOG.md
+Added new field for use.
 
-This project uses code from https://github.com/designermanjeets/Angular-QueryBuilder a fork of https://github.com/zebzhao/Angular-QueryBuilder both developed under the MIT License.
+### 1. timeFame
 
-## Change Log
+If a rule is a number type, then user will need to choose an time frame from 
 
-https://github.com/raysuelzer/ngx-angular-query-builder/blob/main/projects/ngx-angular-query-builder/CHANGELOG.md
+	"last 7 days" 
+	"last 30 days"
+	"last 6 months"
+	"last year"
 
 
-## Branches
 
-- Main should be the latest / highest version.
-- feature/* is where changes are staged before being merged
-- versions/* are the different versions for the angular packages ie. version 16 is versions/16.x.
 
-# Versions
+## To install
+npm i @pri17/ngx-angular-query-builder
 
-Use the following versions depending upon your angular version
-
-- Angular 12 & 13 - Versions ^0.0.5
-- Angular 13 - Versions 13.x.x
-- Angular 14 - Versions 14.x.x
-- Angular 15 - Versions 15.x.x
-- Angular 16 - Versions 16.x.x
-- Angular 17 - Versions 17.x.x
-- Angular 18 - Versions 18.x.x
-
-# Examples
-
-npm install ngx-angular-query-builder
 
 ## Basic Usage
 
