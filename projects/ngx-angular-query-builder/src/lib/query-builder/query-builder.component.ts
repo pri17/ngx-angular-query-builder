@@ -114,10 +114,10 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
     boolean: ["="]
   };
   @Input() disabled = false;
-  @Input() data: RuleSet = { condition: "and", rules: [] };
+  @Input() data: RuleSet = { logic_operator: "and", rules: [] };
 
   @HostBinding("attr.query-builder-condition") get condition() {
-    return this.data?.condition;
+    return this.data?.logic_operator;
   }
 
   // For ControlValueAccessor interface
@@ -528,7 +528,7 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
       return;
     }
 
-    this.data.condition = value;
+    this.data.logic_operator = value;
     this.handleTouched();
     this.handleDataChange();
   }

@@ -61,7 +61,7 @@
         <input
           type="radio"
           [ngClass]="getClassNames('switchRadio')"
-          [(ngModel)]="data.condition"
+          [(ngModel)]="data.logic_operator"
           [disabled]="disabled"
           value="and"
           #andOption
@@ -74,7 +74,7 @@
         <input
           type="radio"
           [ngClass]="getClassNames('switchRadio')"
-          [(ngModel)]="data.condition"
+          [(ngModel)]="data.logic_operator"
           [disabled]="disabled"
           value="or"
           #orOption

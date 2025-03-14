@@ -41,7 +41,7 @@ export class AppComponent {
   };
 
   public query = {
-    condition: "and",
+    logic_operator: "and",
     rules: [
       { metric: "age", operator: "<=", entity: "physical" },
       { metric: "birthday", operator: "=", value: new Date(), entity: "nonphysical" },

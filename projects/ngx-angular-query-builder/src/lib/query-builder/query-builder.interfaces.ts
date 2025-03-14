@@ -1,7 +1,7 @@
 import { ValidationErrors } from "@angular/forms";
 
 export interface RuleSet {
-  condition: string;
+  logic_operator : string;
   rules: Array<RuleSet | Rule | any>;
   collapsed?: boolean;
   isChild?: boolean;
