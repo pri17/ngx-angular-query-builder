@@ -8,11 +8,11 @@ export interface RuleSet {
 }
 
 export interface Rule {
-  field: string;
+  metric: string;
   value?: any;
   operator?: string;
   entity?: string;
-  timeFame?: number;
+  time_frame?: number;
 }
 
 export interface Option {

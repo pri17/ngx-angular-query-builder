@@ -156,7 +156,7 @@
               <div [ngClass]="getClassNames('fieldControlSize')">
                 <select
                   [ngClass]="getClassNames('fieldControl')"
-                  [(ngModel)]="rule.field"
+                  [(ngModel)]="rule.metric"
                   (ngModelChange)="changeField($event, rule)"
                   [disabled]="disabled"
                 >
@@ -181,7 +181,7 @@
                   (ngModelChange)="changeOperator(rule)"
                   [disabled]="disabled"
                 >
-                  <option *ngFor="let operator of getOperators(rule.field)" [ngValue]="operator">
+                  <option *ngFor="let operator of getOperators(rule.metric)" [ngValue]="operator">
                     {{ operator }}
                   </option>
                 </select>
@@ -197,7 +197,7 @@
             <ng-template #defaultInput>
               <div
                 [ngClass]="getClassNames('inputControlSize', 'flexRow')"
-                [ngSwitch]="getInputType(rule.field, rule.operator)"
+                [ngSwitch]="getInputType(rule.metric, rule.operator)"
               >
                 <input
                   [ngClass]="getClassNames('inputControl')"
@@ -238,7 +238,7 @@
                   [disabled]="disabled"
                   *ngSwitchCase="'category'"
                 >
-                  <option *ngFor="let opt of getOptions(rule.field)" [ngValue]="opt.value">
+                  <option *ngFor="let opt of getOptions(rule.metric)" [ngValue]="opt.value">
                     {{ opt.name }}
                   </option>
                 </select>
@@ -250,7 +250,7 @@
                     [disabled]="disabled"
                     multiple
                   >
-                    <option *ngFor="let opt of getOptions(rule.field)" [ngValue]="opt.value">
+                    <option *ngFor="let opt of getOptions(rule.metric)" [ngValue]="opt.value">
                       {{ opt.name }}
                     </option>
                   </select>
@@ -266,11 +266,11 @@
                 <span style="padding:5px 10px" *ngSwitchCase="'number'">in</span>
                 <select
                   [ngClass]="getClassNames('inputControl')"
-                  [(ngModel)]="rule.timeFame"
+                  [(ngModel)]="rule.time_frame"
                   (ngModelChange)="changeInput()"
                   *ngSwitchCase="'number'"
                 >
-                  <option *ngFor="let opt of getTimeRange(rule.field)" [ngValue]="opt.value">
+                  <option *ngFor="let opt of getTimeRange(rule.metric)" [ngValue]="opt.value">
                     {{ opt.name }}
                   </option>
                 </select>

@@ -275,7 +275,7 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
   };
 
   findTemplateForRule(rule: Rule): TemplateRef<any> | any {
-    const type = this.getInputType(rule.field, rule.operator as string);
+    const type = this.getInputType(rule.metric, rule.operator as string);
     if (type) {
       const queryInput = this.findQueryInput(type);
       if (queryInput) {
@@ -549,7 +549,7 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
   }
 
   coerceValueForOperator(operator: string, value: any, rule: Rule): any {
-    const inputType: string | null = this.getInputType(rule.field, operator);
+    const inputType: string | null = this.getInputType(rule.metric, operator);
     if (inputType === "multiselect" && !Array.isArray(value)) {
       return [value];
     }
@@ -611,7 +611,7 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
       rs = this.data;
       i = rs.rules.findIndex((x) => x === rule);
     }
-    rule.field = defaultField.value as string;
+    rule.metric = defaultField.value as string;
     rs.rules[i] = rule;
     if (defaultField) {
       this.changeField(defaultField.value as string, rule);
@@ -757,7 +757,7 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
       this.operatorContextCache.set(rule, {
         onChange: this.changeOperator.bind(this) as any,
         getDisabledState: this.getDisabledState,
-        operators: this.getOperators(rule.field),
+        operators: this.getOperators(rule.metric),
         $implicit: rule
       });
     }
@@ -769,8 +769,8 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
       this.inputContextCache.set(rule, {
         onChange: this.changeInput.bind(this),
         getDisabledState: this.getDisabledState,
-        options: this.getOptions(rule.field),
-        field: this.config.fields[rule.field],
+        options: this.getOptions(rule.metric),
+        field: this.config.fields[rule.metric],
         $implicit: rule
       });
     }
@@ -822,8 +822,8 @@ export class QueryBuilderComponent implements OnChanges, ControlValueAccessor, V
       ruleset.rules.forEach((item) => {
         if ((item as RuleSet).rules) {
           return this.validateRulesInRuleset(item as RuleSet, errorStore);
-        } else if ((item as Rule).field) {
-          const field = this.config.fields[(item as Rule).field];
+        } else if ((item as Rule).metric) {
+          const field = this.config.fields[(item as Rule).metric];
           if (field && field.validator) {
             const error = field.validator(item as Rule, ruleset);
             if (error != null) {

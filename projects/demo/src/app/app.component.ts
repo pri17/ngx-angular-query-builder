@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import { UntypedFormBuilder, UntypedFormControl } from "@angular/forms";
-import { MatFormFieldAppearance } from "@angular/material/form-field";
+import { FormBuilder, FormControl } from "@angular/forms";
 
 import {
   QueryBuilderClassNames,
@@ -9,11 +8,10 @@ import {
 
 @Component({
   selector: "app-root",
-  templateUrl: "app.component.html",
-  styleUrls: ["app.component.scss"]
+  templateUrl: "./app.component.html"
 })
 export class AppComponent {
-  public queryCtrl: UntypedFormControl;
+  public queryCtrl: FormControl;
 
   public bootstrapClassNames: QueryBuilderClassNames = {
     removeIcon: "fa fa-minus",
@@ -39,31 +37,21 @@ export class AppComponent {
     entityControl: "form-control",
     entityControlSize: "col-auto pr-0",
     inputControl: "form-control",
-    inputControlSize: "col-auto",
-    flexRow: "d-flex flex-row"
+    inputControlSize: "col-auto"
   };
 
   public query = {
     condition: "and",
     rules: [
-      {
-        field: "age",
-        operator: "<=",
-        entity: "physical"
-      },
-      {
-        field: "birthday",
-        operator: "=",
-        value: new Date(),
-        entity: "nonphysical"
-      },
+      { metric: "age", operator: "<=", entity: "physical" },
+      { metric: "birthday", operator: "=", value: new Date(), entity: "nonphysical" },
       {
         condition: "or",
         rules: [
-          { field: "gender", operator: "=", entity: "physical" },
-          { field: "occupation", operator: "in", entity: "nonphysical" },
-          { field: "school", operator: "is null", entity: "nonphysical" },
-          { field: "notes", operator: "=", entity: "nonphysical" }
+          { metric: "gender", operator: "=", entity: "physical" },
+          { metric: "occupation", operator: "in", entity: "nonphysical" },
+          { metric: "school", operator: "is null", entity: "nonphysical" },
+          { metric: "notes", operator: "=", entity: "nonphysical" }
         ]
       }
     ]
@@ -75,11 +63,7 @@ export class AppComponent {
       nonphysical: { name: "Nonphysical Attributes" }
     },
     fields: {
-      age: {
-        name: "Age",
-        type: "number",
-        entity: "physical"
-      },
+      age: { name: "Age", type: "number", entity: "physical" },
       gender: {
         name: "Gender",
         entity: "physical",
@@ -90,17 +74,8 @@ export class AppComponent {
         ]
       },
       name: { name: "Name", type: "string", entity: "nonphysical" },
-      notes: {
-        name: "Notes",
-        type: "textarea",
-        operators: ["=", "!="],
-        entity: "nonphysical"
-      },
-      educated: {
-        name: "College Degree?",
-        type: "boolean",
-        entity: "nonphysical"
-      },
+      notes: { name: "Notes", type: "textarea", operators: ["=", "!="], entity: "nonphysical" },
+      educated: { name: "College Degree?", type: "boolean", entity: "nonphysical" },
       birthday: {
         name: "Birthday",
         type: "date",
@@ -108,12 +83,7 @@ export class AppComponent {
         defaultValue: () => new Date(),
         entity: "nonphysical"
       },
-      school: {
-        name: "School",
-        type: "string",
-        nullable: true,
-        entity: "nonphysical"
-      },
+      school: { name: "School", type: "string", nullable: true, entity: "nonphysical" },
       occupation: {
         name: "Occupation",
         entity: "nonphysical",
@@ -130,10 +100,7 @@ export class AppComponent {
 
   public config: QueryBuilderConfig = {
     fields: {
-      age: {
-        name: "Age",
-        type: "number"
-      },
+      age: { name: "Age", type: "number" },
       gender: {
         name: "Gender",
         type: "category",
@@ -169,9 +136,8 @@ export class AppComponent {
   public allowRuleset: boolean = true;
   public allowCollapse!: boolean;
   public persistValueOnFieldChange: boolean = false;
-  appearance: MatFormFieldAppearance = "outline";
 
-  constructor(private formBuilder: UntypedFormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.queryCtrl = this.formBuilder.control(this.query);
     this.currentConfig = this.config;
   }
